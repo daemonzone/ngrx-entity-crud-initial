@@ -1,3 +1,22 @@
 {
-
+  "coin": [
+    {
+      "id": 1,
+      "value": "100",
+      "name": "tens",
+      "description": "10x"
+    },
+    {
+      "id": 2,
+      "value": "20",
+      "name": "twenties",
+      "description": "20x"
+    },
+    {
+      "id": 3,
+      "value": "30",
+      "name": "thirties",
+      "description": "30x"
+    }
+  ]
 }
