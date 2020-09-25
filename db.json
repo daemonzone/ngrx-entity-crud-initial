@@ -2,7 +2,7 @@
   "coin": [
     {
       "id": 1,
-      "value": "100",
+      "value": "1000",
       "name": "tens",
       "description": "10x"
     },
@@ -17,6 +17,21 @@
       "value": "30",
       "name": "thirties",
       "description": "30x"
+    },
+    {
+      "id": 4,
+      "value": "400",
+      "name": "forties",
+      "description": "40x"
+    }
+  ],
+  "person": [
+    {
+      "firstname": "Mario",
+      "lastname": "Brothers",
+      "email": "mario@brotherhood.net",
+      "phone": "346 0011 2233"
     }
   ]
+
 }

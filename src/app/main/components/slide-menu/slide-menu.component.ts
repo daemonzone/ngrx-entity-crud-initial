@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {RootStoreState, SlideMenuStoreActions} from '../../../root-store/';
+import {RootStoreState, RouterStoreActions, SlideMenuStoreActions} from '../../../root-store/';
 import {MenuItem} from 'primeng/api';
 
 @Component({
@@ -47,6 +47,58 @@ export class SlideMenuComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     const items = [
+      {
+        label: 'Coins',
+        icon: 'pi pi-pw pi-file',
+        items: [{
+          label: 'New',
+          icon: 'pi pi-fw pi-plus',
+          items: [
+            {
+              label: 'Search',
+              icon: 'pi pi-fw pi-filter',
+              command: (event$) => {
+                // invoco il router per cambiare pagina
+                this.store$.dispatch(RouterStoreActions.RouterGo({path: ['coin/main']}));
+
+                // salvo nello store del menù l'elemento selezionato.
+                this.store$.dispatch(SlideMenuStoreActions.Select({
+                  item: {
+                    data: {},
+                    breadcrumb: ['Coin', 'New', 'Search']
+                  }
+                }));
+              }
+            }
+          ]
+        }]
+      },
+      {
+        label: 'People',
+        icon: 'pi pi-pw pi-file',
+        items: [{
+          label: 'New',
+          icon: 'pi pi-fw pi-plus',
+          items: [
+            {
+              label: 'Search',
+              icon: 'pi pi-fw pi-filter',
+              command: (event$) => {
+                // invoco il router per cambiare pagina
+                this.store$.dispatch(RouterStoreActions.RouterGo({path: ['person/main']}));
+
+                // salvo nello store del menù l'elemento selezionato.
+                this.store$.dispatch(SlideMenuStoreActions.Select({
+                  item: {
+                    data: {},
+                    breadcrumb: ['Person', 'New', 'Search']
+                  }
+                }));
+              }
+            }
+          ]
+        }]
+      },
       {
         label: 'File',
         icon: 'pi pi-pw pi-file',
