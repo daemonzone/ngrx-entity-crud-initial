@@ -12,12 +12,14 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {SearchModule} from '@components/search/search.module';
 import {PipesModule} from '@core/pipe/pipes.module';
+import { CoinNewButtonComponent } from './components/coin-new-button/coin-new-button.component';
 //testaaa
 @NgModule({
   declarations: [
     CoinEditComponent,
     CoinMainComponent,
-    CoinListComponent
+    CoinListComponent,
+    CoinNewButtonComponent
   ],
   imports: [
     CommonModule,

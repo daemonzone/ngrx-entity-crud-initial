@@ -7,6 +7,7 @@ import {RouterStoreActions} from '@root-store/router-store/index';
 import {tap} from 'rxjs/operators';
 import {ConfirmationService} from 'primeng/api';
 import {PopUpData} from '@root-store/router-store/pop-up-base.component';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @Component({
   selector: 'app-coin-list',
@@ -41,6 +42,22 @@ export class CoinListComponent implements OnInit {
     this.store$.dispatch(
       CoinStoreActions.SearchRequest({queryParams: {}})
     );
+
+  }
+
+  onNew(item) {
+    console.log('CoinListComponent.onEdit()');
+
+    const data: PopUpData<Coin> = {
+      item: new Coin(),
+      props: {title: 'New Coin', route: 'coin'}
+    };
+
+    // apro la popUP
+    this.store$.dispatch(RouterStoreActions.RouterGoPopUp({
+      path: ['coin', {outlets: {popUp: ['edit']}}],
+      data
+    }));
 
   }
 
