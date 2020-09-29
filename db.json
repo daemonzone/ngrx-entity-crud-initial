@@ -23,6 +23,12 @@
       "value": "400",
       "name": "forties",
       "description": "40x"
+    },
+    {
+      "value": "200",
+      "name": "duecento",
+      "description": "sdajsmd",
+      "id": 5
     }
   ],
   "person": [
@@ -33,5 +39,4 @@
       "phone": "346 0011 2233"
     }
   ]
-
 }

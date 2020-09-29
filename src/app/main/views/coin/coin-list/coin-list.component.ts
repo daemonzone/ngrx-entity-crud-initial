@@ -45,7 +45,7 @@ export class CoinListComponent implements OnInit {
 
   }
 
-  onNew(item) {
+  onNew() {
     console.log('CoinListComponent.onEdit()');
 
     const data: PopUpData<Coin> = {
