@@ -12,21 +12,15 @@ import {CoinStoreActions} from '@root-store/coin-store';
 })
 export class CoinEditComponent extends PopUpBaseComponent<Coin> {
 
-  editForm = new FormGroup({
-    id: new FormControl(''),
-    name: new FormControl(''),
-    value: new FormControl(''),
-    description: new FormControl('')
-  });
-
   form: FormGroup;
-  keys: string[];
 
   setItemPerform(value: Coin): void {
-    const group = this.fb.group({});
-    this.keys = Object.keys(value);
-    this.keys.forEach(key => group.addControl(key, this.fb.control({value: value[key], disabled: key === 'id'})));
-    this.form = group;
+    this.form = new FormGroup({
+      id: new FormControl(''),
+      name: new FormControl(''),
+      val: new FormControl(''),
+      description: new FormControl('')
+    });
   }
 
   acceptPerform(item: Coin): void {
@@ -54,4 +48,5 @@ export class CoinEditComponent extends PopUpBaseComponent<Coin> {
   // cancel(): void {
   //   this.store$.dispatch(closePopUpAction(this.route));
   // }
+
 }
