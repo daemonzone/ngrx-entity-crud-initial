@@ -2,15 +2,15 @@
   "coin": [
     {
       "id": 1,
-      "value": "1000",
       "name": "tens",
-      "description": "10x"
+      "value": "1000111",
+      "description": "10x and more..."
     },
     {
       "id": 2,
-      "value": "20",
       "name": "twenties",
-      "description": "20x"
+      "value": "20",
+      "description": "20x and 20x"
     },
     {
       "id": 3,
@@ -35,6 +35,12 @@
       "name": "seicento",
       "description": "dapofkapskd",
       "id": 6
+    },
+    {
+      "name": "tens",
+      "value": "1000111",
+      "description": "10x and more",
+      "id": 7
     }
   ],
   "person": [

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {closePopUpAction, PopUpBaseComponent} from '@root-store/router-store/pop-up-base.component';
 import {Coin} from '@models/vo/coin';
-import {FormGroup, FormControl} from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {CoinStoreActions} from '@root-store/coin-store';
 
 
@@ -13,17 +13,38 @@ import {CoinStoreActions} from '@root-store/coin-store';
 export class CoinEditComponent extends PopUpBaseComponent<Coin> {
 
   form: FormGroup;
+  id: FormControl;
+  name: FormControl;
+  value: FormControl;
+  description: FormControl;
+
+  lastItem: Coin;
 
   setItemPerform(value: Coin): void {
-    this.form = new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl(''),
-      val: new FormControl(''),
-      description: new FormControl('')
+    this.lastItem = value;
+
+    this.makeForm(value);
+
+    this.form.reset(value);
+  }
+
+  makeForm(value: Coin) {
+    this.id = this.fb.control({value: '', disabled: true}, [Validators.required]);
+    this.name = this.fb.control({value: '', disabled: false}, [Validators.required]);
+    this.value = this.fb.control({value: '', disabled: false}, [Validators.required]);
+    this.description = this.fb.control({value: '', disabled: false}, [Validators.required]);
+
+    this.form = this.fb.group({
+      // id: this.id,
+      name: this.name,
+      value: this.value,
+      description: this.description
     });
   }
 
-  acceptPerform(item: Coin): void {
+  acceptPerform(value: Coin): void {
+    const item = {...this.lastItem, ...value};
+
     if (item.id) {
       this.store$.dispatch(CoinStoreActions.EditRequest({
         item, onResult: [
