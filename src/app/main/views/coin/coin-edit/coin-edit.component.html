@@ -16,11 +16,23 @@
     <div class="ui-g-6">
       <form
         class="dynamic-form"
-        [formGroup]="form">
-        <div *ngFor="let key of keys" class="ui-g">
+        [formGroup]="editForm">
+        <div class="ui-g">
           <div class="ui-g-12">
-            <label for="{{key}}"><strong>{{key}}</strong></label><br>
-            <input id="{{key}}" name="{{key}}" type="text" class="form-control" pInputText [formControlName]="key"/>
+            <label for="id"><strong>id</strong></label><br>
+            <input id="id" name="id" type="text" class="form-control" pInputText [formControlName]="id"/>
+          </div>
+          <div class="ui-g-12">
+            <label for="name"><strong>name</strong></label><br>
+            <input id="name" name="name" type="text" class="form-control" pInputText [formControlName]="name"/>
+          </div>
+          <div class="ui-g-12">
+            <label for="value"><strong>value</strong></label><br>
+            <input id="value" name="value" type="text" class="form-control" pInputText [formControlName]="value"/>
+          </div>
+          <div class="ui-g-12">
+            <label for="description"><strong>description</strong></label><br>
+            <input id="description" name="description" type="text" class="form-control" pInputText [formControlName]="description"/>
           </div>
         </div>
       </form>

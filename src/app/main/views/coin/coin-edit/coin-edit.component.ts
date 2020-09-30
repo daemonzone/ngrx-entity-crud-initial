@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {closePopUpAction, PopUpBaseComponent} from '@root-store/router-store/pop-up-base.component';
 import {Coin} from '@models/vo/coin';
-import {FormGroup} from '@angular/forms';
+import {FormGroup, FormControl} from '@angular/forms';
 import {CoinStoreActions} from '@root-store/coin-store';
 
 
@@ -11,6 +11,13 @@ import {CoinStoreActions} from '@root-store/coin-store';
   styles: [``]
 })
 export class CoinEditComponent extends PopUpBaseComponent<Coin> {
+
+  editForm = new FormGroup({
+    id: new FormControl(''),
+    name: new FormControl(''),
+    value: new FormControl(''),
+    description: new FormControl('')
+  });
 
   form: FormGroup;
   keys: string[];

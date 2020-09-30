@@ -16,6 +16,7 @@ import {NgLetModule} from '@core/directive/ng-let.directive';
 import {BreadcrumbModule} from '@components/breadcrumb/breadcrumb.module';
 import {ClickOutsideModule} from '@core/directive/click-outside-directive';
 import {CardModule} from 'primeng/card';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {CardModule} from 'primeng/card';
     ProgressModule,
     BreadcrumbModule,
     ClickOutsideModule,
-    CardModule
+    CardModule,
+    ReactiveFormsModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
